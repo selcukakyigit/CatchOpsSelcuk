@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'CatchopsApp',
+    'AccountApp',
+
 ]
 
 MIDDLEWARE = [
@@ -67,6 +71,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL='AccountApp.Account'
 
 WSGI_APPLICATION = 'CatchopsProject.wsgi.application'
 

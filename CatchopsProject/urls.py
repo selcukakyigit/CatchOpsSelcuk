@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 admin.site.site_header = 'Catchops Administrator'                    # default: "Django Administration"
 admin.site.index_title = ' Catchops Features area'                 # default: "Site administration"
 admin.site.site_title = 'Catchops adminsitration'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',include('CatchopsApp.urls','CatchopsApp')),
+    path('account/',include('AccountApp.urls','AccountApp')),
+    path('api/',include('AccountApp.api.urls','AccountApp_api')),
 ]
