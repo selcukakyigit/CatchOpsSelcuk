@@ -62,3 +62,9 @@ class Account(AbstractBaseUser):
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
+
+class  SellerInfo(models.Model):
+    name=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
